@@ -1,0 +1,279 @@
+sudo -i (or) sudo su -
+
+su means super user or switch user
+
+for logout ---- exit
+
+for OS --- uname
+
+for Kernel version --- uname -r
+
+to know full info of os ----- uname -a
+
+server entha sepati nunchi running lo vundhi --------  uptime
+
+evaru connect ayyaru server tho ----  who
+
+who -i  --doubt
+
+to get only time  ---- uptime -p
+
+to get date ------- date
+
+to know what timezone we are following:
+----- timedatectl
+
+to know the hostname ---- hostname
+
+to change hostname ----
+hostnamectl set-hostname swiggy-test
+
+to go back to original hostname go to AWS account details --- copy the host name and execute the above command
+
+to know server IP address
+--------- ip addr
+(or) ip route
+(or) ifconfig
+(or) hostname -i
+
+To know which user we are in right now -----  whoami
+
+------------------------------------------------------------------------------
+
+session 6:
+
+hardware commands
+
+to get the cpu information----- lscpu
+
+
+for clear command shortcut is CTRL + L
+
+To know how much cpu server is using -------- top
+
+----to get back from top it is CTRL + C
+
+To know about Ram details------free
+
+to know ram data in mega bytes --------- free -m
+
+to know ram data in giga bytes --------- free -g
+
+to know ram data in human readable format bytes --------- free -h
+
+to know about memory/storage information i.e EBS volume is ----  df -h
+
+to know about multiple EBS volumes the command is ------ lsblk  (list of block devices)
+
+File commands:
+
+to create files --------- touch
+ex: touch devops
+
+In Linux all files are text-based only
+
+To know whether the file is created or not ---------- ll (or) ls
+
+ll(long list) --- full info, like permissions
+
+to create multiple files----------------
+ ex: touch Jenkins docker terraform
+
+it follows alphabetical order
+
+to create files in a sequential manner
+----  touch flm{3..6}
+
+to delete the file ---- rm (remove)
+
+ex: rm filename
+
+for multiple files: rm Jenkins devops
+
+To remove the files without permission or forcefully --- rm -f devops Jenkins
+
+to remove all the files ----- rm -f *
+
+* refers to all files in Linux
+
+to create all text files 
+----- touch file.txt gayi.txt sameera.txt
+
+to create java files --------------- touch app{1..3}.java
+
+to remove all text files ------------ rm -f *.txt
+
+to remove all java files  ------------
+ rm -f *.java
+
+to remove files that starts with first letter of file name ------------------
+rm -f b*
+
+(very important)
+
+1. difference between file and folder
+2. files start with "-"
+3. for directories start with "d"
+4. In Linux "-" refers to regular file
+"d" refers to directory
+
+5. rmdir is used to remove empty directories only
+
+All files and directories are stored in EBS volume
+
+To create a folder ----- mkdir
+
+To create multiple directories ------ mkdir dir1 dir2 dir3
+
+to create directories in sequential way ----- mkdir swathi{1..3}
+
+to remove the folders ----- rmdir
+
+for multiple folders --- rmdir dir1 dir2 dir3
+
+to delete all the folders at a time ------- rmdir *
+
+to remove all files and folders at once -----  rm -rf *
+
+inside inside folders --------------- rm -rf foldername 
+where rm = remove, -rf = recursive forcefully 
+
+To know the present directory ---- pwd
+
+cd ---- change directory
+
+to get back to root ---- cd
+
+to get back to previous/original folder ---- cd -
+
+to create a file in folder------------
+touch folder/gayi.txt
+
+to view all -------- ll folder/
+
+to crete folder in folder ------------mkdir folder/folder2
+
+to see the files in reverse order -----
+ll -r (or) ls -r
+
+to see the files based on created time ----- ll -t
+
+ll -lrt , ll -rtl, ll -tlr ------------- to view the files
+
+
+to see the hidden files in system ------- ll -a
+
+These are started with "."
+
+---------------------------------------
+---------------------------------------
+
+session 7
+---------
+
+if folder1 is not there and we want to create folder2 inside of folder1 then
+------ mkdir -p folder1/folder2
+
+where p is parenting
+
+to add any data to a file -------------
+ cat > filename
+
+to close that cat file and save data ---- CTRL + D
+
+to read the data in the file ----------
+cat filename
+
+to data the data in the same file -----
+cat >> filename
+
+to see the data with line numbers -----
+cat -n filename
+
+To insert the data for the third time
+----- cat >> filename
+
+
+cat > filename : replace/overwrite the data
+
+cat >> filename : append (old + new data)
+
+---> cat command is just useful for append the data
+
+To modify the existing file we use editors
+1. Vi editor (or) vim editor
+2. nano
+
+Vim editor: Used to modify the files on Linux OS. It has different modes
+
+1. command mode
+2. insert mode
+3. save & quit mode
+
+1. Command: This is the default mode vim editor. It is used to copy, paste, move to a specific line, replace, search, delete
+
+a. gg: it wil go to first line
+b. G: go to last line
+c. M: used to go to middle of the file
+d. to go to specific line ex: 3rd line ---> 3gg
+alternative way:
+Shift:3
+
+To know which line we are in (or) set numbers for a line -----------
+Shift: set number
+
+To copy the specific file ex: line 4 , cursor in line 4 and give yy
+
+where we can paste id give "p" --> lo times 10p
+e. yy= used to copy single line
+f. dd = used to delete single line
+g. 4yy = used to copy 4 lines from our cursor
+h. 5dd = used to delete 5 lines from our cursor
+g. u = used to undo
+h. ctrl+ r = redo
+i. /word name (or) ?word name = used to search for a word
+
+j. Shift:%s/old word/new word/g --- to replace the word
+
+k. p = used to paste the copied content
+
+l. 5p = used to paste 5 times
+
+Insert Mode: used to insert the data
+--------------
+--------------
+
+if we give ESc -- we are in command mode
+ 
+a. i = used to go to insert mode
+b. esc = used to go to command mode
+c. A = used to go the ending of the line 
+d. I = used to go the starting of  the line 
+
+Save and Quit mode: used to save the data and quit from VIM editor
+-------------------------
+--------------------------
+
+a. :w = used to save the data
+b. :q = used to quit from vim
+c. :wq = used to save and quit
+d. :q! = used to quit without saving the data
+e. :wq! = used to save and quit forcefully
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
